@@ -19,7 +19,7 @@ $Ip | ForEach-Object {
             $IPv6Address += ':'
         }
         # https://www.reddit.com/r/ipv6/comments/e8gr7b/discord_works_on_ipv6_if_you_force_it/
-        $IPv6Address += [Convert]::ToString($IpOctets[$i], 16)
+        $IPv6Address += "{0:x2}" -f $IpOctets[$i]
     }
 
     Write-Output $IPv6Address
